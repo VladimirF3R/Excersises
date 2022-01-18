@@ -43,8 +43,6 @@ function whatsResult3(){
 
 function calculatorObject(){
     let calculator = {
-        num1: 0,
-        num2: 0,
         read() {
             this.num1 = +prompt("Enter 1st number");
             this.num2 = +prompt("Enter 2nd number");
@@ -56,10 +54,9 @@ function calculatorObject(){
             return this.num1 * this.num2;
         },  
     };
-      
-      calculator.read();
-      console.log( calculator.sum() );
-      console.log( calculator.mul() );
+    calculator.read();
+    console.log( calculator.sum() );
+    console.log( calculator.mul() );
 }
 
 function thisKeyChain(){
