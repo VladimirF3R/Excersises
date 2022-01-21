@@ -1,6 +1,7 @@
 //twoConstructors();
 //calculatorConstructor();
-accumulatorConstructor();
+//accumulatorConstructor();
+ConsoleWrapper();
 
 function twoConstructors() {
     let obj = {name:"New object"};
@@ -43,4 +44,22 @@ function accumulatorConstructor() {
     accumulator.read(); 
     accumulator.read();
     console.log(accumulator.value);
+}
+function ConsoleWrapper(){
+    function InternalConsole(){
+        let regularConsole = console;
+        this.log = function(message) {
+            //regularConsole.log(message)
+            //regularConsole.log(`${"-".repeat(40)}`);
+            alert(message);
+        };
+        this.releaseConsole = function() {
+            console = regularConsole;        
+        }
+    } 
+    console = new InternalConsole(); 
+    console.log("Test");
+    console.releaseConsole();
+    console.log("Test");
+
 }
